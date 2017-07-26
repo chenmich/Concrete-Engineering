@@ -12,5 +12,14 @@ post.post_title = post_title
 post.post_body = post_content
 posts.append(post)
 posts.append(post)
+def __get_entries_by_author(author):
+    __posts = []
+    __posts.append(post)
+    return __posts
+#dishplay all the post entries
 def index():
     return render_template('index.html', posts=posts)
+#display all the post entries of the author
+def user_post(author):
+    _posts = __get_entries_by_author(author)
+    return render_template('index.html', posts=_posts)

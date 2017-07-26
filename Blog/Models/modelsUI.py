@@ -1,4 +1,6 @@
 
+from flask import url_for
+
 class PostUI:
     def __init__(self):
         self.__author_name = ''
@@ -54,4 +56,6 @@ class PostUI:
         if (post_id is None) or (post_id <= 0):
             raise ValueError('The post_id is is not null or <= 0')
         else:
-            self.__post_id = post_id 
+            self.__post_id = post_id
+    
+        
