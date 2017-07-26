@@ -1,11 +1,11 @@
 from flask import Blueprint, Flask
-from .views import index, user_post_entries, post_body
+from .views import index, post_by_author, post_body
 from flask_bootstrap import Bootstrap
 from.config import config
 
 def __addurlrule(blogblueprint):
     blogblueprint.add_url_rule('/', endpoint=None, view_func=index)
-    blogblueprint.add_url_rule('/post/<string:author>', view_func=user_post_entries)
+    blogblueprint.add_url_rule('/post/<string:author>', view_func=post_by_author)
     blogblueprint.add_url_rule('/post/<int:Id>', view_func=post_body)
 #
 def create_blueprint():

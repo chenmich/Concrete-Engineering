@@ -21,7 +21,7 @@ def __get_entries_by_author(author):
 def index():
     return render_template('index.html', posts=posts)
 #display all the post entries of the author
-def user_post_entries(author):
+def post_by_author(author):
     _posts = __get_entries_by_author(author)
     return render_template('index.html', posts=_posts)
 def post_body(Id):
