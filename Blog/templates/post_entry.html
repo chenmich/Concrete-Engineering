@@ -4,7 +4,8 @@
     <div>{{post.post_body}}</div>
     <br/>
     <br/>
-    <a href=''>全文</a>
+    <a href="{{url_for('post', Id=post.post_id)}}">全文</a>
+    
     <br/>
     <br/>
 </div>

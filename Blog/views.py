@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template, url_for, redirect
 from .Models.modelsUI import PostUI
 
 post_title = "How To Start a Blog – Beginner’s Guide for 2017"
@@ -10,6 +10,7 @@ post.author_id = 1
 post.author_name = '匡飞龙'
 post.post_title = post_title
 post.post_body = post_content
+post.post_id = 1000
 posts.append(post)
 posts.append(post)
 def __get_entries_by_author(author):
@@ -20,6 +21,8 @@ def __get_entries_by_author(author):
 def index():
     return render_template('index.html', posts=posts)
 #display all the post entries of the author
-def user_post(author):
+def user_post_entries(author):
     _posts = __get_entries_by_author(author)
     return render_template('index.html', posts=_posts)
+def post_body(Id):
+    return str(Id) + "<h1>显示规定的post全文还未实现还没有实现</h1>"
