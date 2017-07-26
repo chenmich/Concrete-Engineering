@@ -5,6 +5,7 @@ class PostUI:
         self.__author_id = -10000
         self.__body = ''
         self.__post_title = ''
+        self.__post_id = -10000
     def save(self):
         pass
     def get(self):
@@ -24,7 +25,7 @@ class PostUI:
     @author_id.setter
     def author_id(self, author_id):
         if (author_id is None) or (author_id <= 0):
-            raise ValueError('The author is is not null or <= 0')
+            raise ValueError('The author_id is is not null or <= 0')
         else:
             self.__author_id = author_id
     @property
@@ -45,3 +46,12 @@ class PostUI:
             raise ValueError('The title can not be null or blank!')
         else:
             self.__post_title = title
+    @property
+    def post_id(self):
+        return self.__post_id
+    @post_id.setter
+    def post_id(self, post_id):
+        if (post_id is None) or (post_id <= 0):
+            raise ValueError('The post_id is is not null or <= 0')
+        else:
+            self.__post_id = post_id 
