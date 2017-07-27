@@ -27,4 +27,4 @@ def post_by_author(author):
     _posts = __get_entries_by_author(author)
     return render_template('index.html', posts=_posts)
 def post_body(Id):
-    return str(Id) + "<h1>显示规定的post全文还未实现还没有实现</h1>"
+    return render_template("post_body.html", post=__get_entries_by_author("")[0])
