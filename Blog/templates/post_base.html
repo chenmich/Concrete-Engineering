@@ -1,0 +1,11 @@
+<div>
+    <a href= "{{ url_for('blog.post_by_author', author=post.author_name) }}">{{post.author_name}}</a>
+    <a href="{{url_for('blog.post_body', Id=post.post_id)}}"><h1>{{post.post_title}}</h1></a>
+    {% block post_body %}
+    {% endblock%}        
+    <br/>
+    <br/>
+    <a href="{{url_for('blog.post_body', Id=post.post_id)}}">阅读全文</a>    
+    <br/>
+    <br/>
+</div>
