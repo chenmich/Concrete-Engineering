@@ -2,3 +2,5 @@ Flask==0.12.2
 Flask-Bootstrap==3.3.7.1
 Flask-WTF==0.14.2
 htmlement==0.2.3
+sqlalchemy-migrate==0.11.0
+Flask-SQLAlchemy==2.2
