@@ -27,4 +27,5 @@ def post_by_author(author):
     _posts = __get_entries_by_author(author)
     return render_template('index.html', posts=_posts)
 def post_body(Id):
-    return render_template("post_body.html", post=__get_entries_by_author("")[0])
+    posts = __get_entries_by_author("")
+    return render_template("post_body.html", post=posts[0])

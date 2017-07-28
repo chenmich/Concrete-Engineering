@@ -1,5 +1,4 @@
-{% extends "post_base.html" %}
-{% block post_body %}
-<div>{{post.post_body}}</div>
-<div><h1>评论区还未实现</h1>
+{% extends "base.html" %}
+{% block left_content %}
+    {% include "post_full_text.html" %}
 {% endblock %}
