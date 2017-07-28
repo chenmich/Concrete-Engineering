@@ -57,5 +57,8 @@ class PostUI:
             raise ValueError('The post_id is is not null or <= 0')
         else:
             self.__post_id = post_id
+    @property
+    def get_first_paragraph(self):
+        return "The function to get the first paragraph of a post is not impletmented!"
     
         
