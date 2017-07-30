@@ -1,5 +1,5 @@
 from flask import Blueprint, Flask
-from .views import index, post_by_author, post_body
+from .views import index, post_by_author, post_body, post_editor
 from flask_bootstrap import Bootstrap
 from.config import config
 
@@ -7,6 +7,7 @@ def __addurlrule(blogblueprint):
     blogblueprint.add_url_rule('/', endpoint=None, view_func=index)
     blogblueprint.add_url_rule('/post/<string:author>', view_func=post_by_author)
     blogblueprint.add_url_rule('/post/<int:Id>', view_func=post_body)
+    blogblueprint.add_url_rule('/post/editor/<int:Id>', view_func=post_editor)
 #
 def create_blueprint():
     blog_blueprint = Blueprint('blog', __name__,
