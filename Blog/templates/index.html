@@ -1,6 +1,8 @@
 {% extends "base.html"%}
 {%block left_content %}
-    {% for post in posts %}    
-        {% include 'post_entry.html' %}
-    {% endfor %}
+    <div>
+        {% for post in posts %}    
+           {% include 'post_entry.html' %}
+        {% endfor %}
+    </div>
 {%endblock%}

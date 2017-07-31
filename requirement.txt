@@ -3,4 +3,5 @@ Flask-Bootstrap==3.3.7.1
 Flask-Migrate==2.1.0
 Flask-SQLAlchemy==2.2
 Flask-WTF==0.14.2
+Flask-PageDown==0.2.2
 htmlement==0.2.3

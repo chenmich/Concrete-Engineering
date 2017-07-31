@@ -1,7 +1,8 @@
 {% extends "post_base.html"%}
 {% block post %}
-    <div><h2>{{post.get_first_paragraph}}</h2></div>
-    <a href="{{url_for('blog.post_body', Id=post.post_id)}}">阅读全文</a>    
+    <div><h2>{{post.get_first_paragraph}}</h2>
+        <a href="{{url_for('blog.post_body', Id=post.post_id)}}">阅读全文</a>
+    </div>
     <br/>
     <br/>
 {% endblock %}

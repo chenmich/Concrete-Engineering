@@ -1,6 +1,11 @@
 {% extends "post_base.html" %}
 {% block post %}
     <div>{{post.post_body}}</div>
+    <div>
+        <br/>
+        <br/>
+        <a href="{{url_for( 'blog.post_editor', Id= 3 ) }}">编辑</a>
+    </div>
     {%block Comment_area %}
         <h2>评论区还未实现</h2>
     {%endblock%}

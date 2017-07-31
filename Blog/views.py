@@ -29,3 +29,5 @@ def post_by_author(author):
 def post_body(Id):
     posts = __get_entries_by_author("")
     return render_template("post_body.html", post=posts[0])
+def post_editor(Id):
+    return '未实现'

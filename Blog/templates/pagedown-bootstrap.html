@@ -1,0 +1,19 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}This is an example page{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-fixed-top">
+  <!-- ... -->
+</div>
+{% endblock %}
+
+{% block content %}
+    <form class="form form-horizontal" method="post" role="form">
+        {{ form.hidden_tag() }}
+        {{ wtf.form_errors(form, hiddens="only") }}
+
+        {{ wtf.form_field(form.field1) }}
+        {{ wtf.form_field(form.field2) }}
+        {{ wtf.form_field(form.field3) }}
+    </form>
+{% endblock %}
