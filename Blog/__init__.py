@@ -1,7 +1,7 @@
 from flask import Blueprint, Flask
 from .views import index, post_by_author, post_body, post_editor
 from flask_bootstrap import Bootstrap
-from.config import config
+from .config import config
 
 def __addurlrule(blogblueprint):
     blogblueprint.add_url_rule('/', endpoint=None, view_func=index)
@@ -17,8 +17,11 @@ def create_blueprint():
     __addurlrule(blog_blueprint)
     return blog_blueprint
 #
-def init_app(app):
+def init_app(app, config_name):
     bootstrap = Bootstrap(app)
     if  not isinstance(app, Flask):
         raise TypeError('app is not an instance of class Flask')
     app.register_blueprint(create_blueprint())
+    app.config.from_object(config[config_name])
+    config[config_name].init_app(app)
+    
