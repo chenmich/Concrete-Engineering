@@ -1,5 +1,6 @@
 from flask import render_template, url_for, redirect
 from .Models.modelsUI import PostUI
+from .forms import Editor
 
 
 def __get_test_posts():
@@ -30,4 +31,5 @@ def post_body(Id):
     posts = __get_entries_by_author("")
     return render_template("post_body.html", post=posts[0])
 def post_editor(Id):
-    return '未实现'
+    form = Editor()
+    return render_template("editor.html", form=form)
