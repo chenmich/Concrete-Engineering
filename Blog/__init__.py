@@ -1,7 +1,7 @@
 from flask import Blueprint, Flask
-from .views import index, post_by_author, post_body, post_editor
+from Blog.views import index, post_by_author, post_body, post_editor
 from flask_bootstrap import Bootstrap
-from .config import config
+from Blog import config
 
 def __addurlrule(blogblueprint):
     blogblueprint.add_url_rule('/', endpoint=None, view_func=index)
@@ -21,7 +21,9 @@ def init_app(app, config_name):
     bootstrap = Bootstrap(app)
     if  not isinstance(app, Flask):
         raise TypeError('app is not an instance of class Flask')
-    app.register_blueprint(create_blueprint())
-    app.config.from_object(config[config_name])
-    config[config_name].init_app(app)
+    blog_blue= create_blueprint()
+    blog_blue.static_url_path=app.static_url_path + "/blog"
+    app.register_blueprint(blog_blue)
+    app.config.from_object(config.config[config_name])
+    config.config[config_name].init_app(app)
     
